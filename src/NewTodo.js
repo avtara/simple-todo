@@ -1,12 +1,15 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useState, useContext } from 'react';
+import { TodoContext } from './TodoContext';
 
-const NewTodo = memo(({ onSubmit }) => {
+const NewTodo = memo(() => {
   const [person, setPerson] = useState('');
   const [note, setNote] = useState('');
 
+  const { addTodo } = useContext(TodoContext);
+
   const handleChange = (event) => {
     event.preventDefault();
-    onSubmit({ person, note });
+    addTodo({ person, note });
   };
 
   return (

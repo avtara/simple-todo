@@ -1,7 +1,9 @@
-import React, { memo } from 'react';
+import React, { memo, useContext } from 'react';
+import { TodoContext } from './TodoContext';
 
 const todo = memo(({ todo, onComplete }) => {
-  const complete = () => onComplete(todo.id);
+  const { toggleComplete } = useContext(TodoContext);
+  const complete = () => toggleComplete(todo.id);
   return (
     <article className="Todo">
       <h3>{todo.person}</h3>
