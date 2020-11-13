@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 
-const NewTodo = ({ onSubmit }) => {
+const NewTodo = memo(({ onSubmit }) => {
   const [person, setPerson] = useState('');
   const [note, setNote] = useState('');
 
@@ -28,6 +28,6 @@ const NewTodo = ({ onSubmit }) => {
       <input className="NewGrudge-submit button" type="submit" />
     </form>
   );
-};
+});
 
 export default NewTodo;

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-const todo = ({ todo, onComplete }) => {
+const todo = memo(({ todo, onComplete }) => {
   const complete = () => onComplete(todo.id);
   return (
     <article className="Todo">
@@ -14,6 +14,6 @@ const todo = ({ todo, onComplete }) => {
       </div>
     </article>
   );
-};
+});
 
 export default todo;
